@@ -38,12 +38,12 @@
 
 		</div>
 
-		<script src="../build/three.js"></script>
-		<script src="js/Detector.js"></script>
-		<script src="js/libs/stats.min.js"></script>
-		<script src="js/libs/dat.gui.min.js"></script>
+		<script src="libs/three.js"></script>
+		<script src="libs/Detector.js"></script>
+		<script src="libs/stats.min.js"></script>
+		<script src="libs/dat.gui.min.js"></script>
 
-		<script src="js/GPUComputationRenderer.js"></script>
+		<script src="libs/GPUComputationRenderer.js"></script>
 
 		<!--
 		TODO: If you're reading this, you may wish to improve this example by
@@ -330,17 +330,17 @@
 			/* TEXTURE WIDTH FOR SIMULATION */
 			var WIDTH = hash || 32;
 
-			var BIRDS = WIDTH * WIDTH;
+			var BIRDS = WIDTH * WIDTH;//number of birds why it should be squere?
 
 			// Custom Geometry - using 3 triangles each. No UVs, no normals currently.
 			THREE.BirdGeometry = function () {
 
-				var triangles = BIRDS * 3;
-				var points = triangles * 3;
+				var triangles = BIRDS * 3;//each bird made by triangles
+				var points = triangles * 3;//each triangle has 3 points obviosly
 
 				THREE.BufferGeometry.call( this );
 
-				var vertices = new THREE.BufferAttribute( new Float32Array( points * 3 ), 3 );
+				var vertices = new THREE.BufferAttribute( new Float32Array( points * 3 ), 3 );//3 for each point
 				var birdColors = new THREE.BufferAttribute( new Float32Array( points * 3 ), 3 );
 				var references = new THREE.BufferAttribute( new Float32Array( points * 2 ), 2 );
 				var birdVertex = new THREE.BufferAttribute( new Float32Array( points ), 1 );
